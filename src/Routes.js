@@ -17,7 +17,7 @@ function Routes() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://api-gestion.vercel.app/events')
+    fetch('https://api-gestion-murex.vercel.app/events')
       .then((res) => res.json())
       .then((json) => setDate(json))
       .catch(() => console.log('erro'))
