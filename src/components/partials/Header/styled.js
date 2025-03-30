@@ -30,7 +30,7 @@ export const HeaderArea = styled.header`
         align-items: center;
         justify-content: center;
         img {
-          width: 50px;
+          width: 40px;
         }
       }
       ul {
@@ -48,9 +48,11 @@ export const HeaderArea = styled.header`
             font-size: 0.9rem;
             color: ${colorSchemma.colorTerciary};
             font-weight: 600;
-            transition: color 180ms ease;
+            transition: 180ms ease;
             position: relative;
-
+            &:hover{
+              color: #fff;
+            }
             &::after {
               content: '';
               width: 0%;  // Começa invisível (sem largura)
@@ -84,9 +86,9 @@ export const HeaderArea = styled.header`
       font-size: 0.9rem;
       transition: 180ms;
       &:hover {
-        color: ${colorSchemma.colorSecondary};
+        
         border-color: ${colorSchemma.colorSecondary};
-        background-color: #23163f;
+        background-color: #0f0f0f;
       }
     }
   }

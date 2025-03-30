@@ -17,7 +17,7 @@ function Routes() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://api-gestion-murex.vercel.app/events')
+    fetch('https://api-gestion-murex.vercel.app/conteudo-cliente')
       .then((res) => res.json())
       .then((json) => setDate(json))
       .catch(() => console.log('erro'))
@@ -38,7 +38,7 @@ function Routes() {
       <Route exact path="/eventos/*/material-complementar">
         <ComplementaryMaterial date={date} />
       </Route>
-      <Route exact path="/eventos/*">
+      <Route exact path="/conteudo-cliente/*">
         <PageEvent date={date} />
       </Route>
       <Route exact path="/contato">

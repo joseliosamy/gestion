@@ -87,21 +87,10 @@ export const PageEventArea = styled.div`
             display: flex;
             flex-direction: column;
             padding: 0 10px;
+            margin-top: 15px;
             position: relative;
-            a {
-              display: flex;
-              align-items: center;
-              color: ${colorSchemma.colorTerciary};
-              font-size: 0.9rem;
-              font-weight: 500;
-              padding: 7px 14px;
-              position: relative;
-              cursor: pointer;
-              &:hover {
-                color: #fff;
-                transition: 150ms;
-              }
-              &:first-child {
+            overflow: hidden;
+            .materialComplementary{
                 display: flex;
                 align-items: center;
                 color: #fff;
@@ -115,6 +104,23 @@ export const PageEventArea = styled.div`
                 svg {
                   margin-right: 5px;
                 }
+            }
+            .sidebar-itens{
+            }
+            a {
+              display: flex;
+              align-items: center;
+              color: ${colorSchemma.colorTerciary};
+              font-size: 0.9rem;
+              font-weight: 500;
+              padding: 7px 14px;
+              position: relative;
+              border-radius: 5px;
+              cursor: pointer;
+              &:hover {
+                color: #fff;
+                background-color: #ffffff11;
+                transition: 150ms;
               }
               svg.circleTemporal {
                 width: 11px;
@@ -134,10 +140,10 @@ export const PageEventArea = styled.div`
             &:after {
               content: '';
               position: absolute;
-              top: 54px;
+              top: 20px;
               left: 12px;
               width: 2px;
-              height: calc(100% - 48px);
+              height: calc(100% - 35px);
               background-color: #444;
             }
           }
@@ -167,8 +173,8 @@ export const PageEventArea = styled.div`
                 margin: 0;
               }
               &:after {
-                top: 66px;
-                height: calc(100% - 64px);
+                top: 20px;
+                height: calc(100% - 40px);
               }
             }
           }

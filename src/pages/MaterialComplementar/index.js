@@ -47,7 +47,7 @@ function ComplementaryMaterial(props) {
     <Delimiters>
       <ComplementaryMaterialArea>
         <div className="path">
-          <Link to="/eventos">Eventos</Link>
+          <Link to="/conteudo-cliente">Conteúdo</Link>
 
           <div>
             <svg

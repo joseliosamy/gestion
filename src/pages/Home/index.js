@@ -1,24 +1,67 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { HomeArea } from './styled';
-
+import { HomeArea, LoadingScreen } from './styled';
 import bannerMP4 from '../../images/banner.mp4';
 import bannerPNG from '../../images/banner.png';
 
 function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+
+    const handleCanPlay = () => {
+      setIsLoading(false);
+    };
+
+    const handleError = () => {
+      setIsLoading(false);
+    };
+
+    video.addEventListener('canplay', handleCanPlay);
+    video.addEventListener('error', handleError);
+
+    // Verificação inicial caso o vídeo já esteja carregado
+    if (video.readyState > 3) {
+      setIsLoading(false);
+    }
+
+    return () => {
+      video.removeEventListener('canplay', handleCanPlay);
+      video.removeEventListener('error', handleError);
+    };
+  }, []);
+
   return (
     <>
-      <HomeArea>
-        <h1>Traffic gestion</h1>
+      {isLoading && (
+        <LoadingScreen>
+          <div className="loader"></div>
+        </LoadingScreen>
+      )}
+
+      <HomeArea $isLoading={isLoading}>
+        <h1>JS | Mídia</h1>
         <Link to="/conteudo-cliente">Começar</Link>
         <div>
-          <video autoPlay muted playsInline loop>
-            <source src={bannerMP4}></source>
+          <video 
+            ref={videoRef}
+            autoPlay 
+            muted 
+            playsInline 
+            loop
+          >
+            <source src={bannerMP4} type="video/mp4" />
           </video>
-          <img src={bannerPNG} alt="banner" />
+          <img 
+            src={bannerPNG} 
+            alt="banner" 
+          />
         </div>
       </HomeArea>
     </>
   );
 }
+
 export default Home;

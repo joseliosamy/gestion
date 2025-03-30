@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+import ui from '../../helpers/ui.json';
+
+
+const { colorSchemma } = ui;
+
 export const EventsArea = styled.div`
   width: 100%;
   height: 100%;
@@ -7,11 +12,7 @@ export const EventsArea = styled.div`
     width: 100%;
     height: 100%;
     margin-bottom: 35px;
-    background: linear-gradient(
-      60deg,
-      rgba(93, 23, 234, 1) 0%,
-      rgba(97, 74, 233, 1) 100%
-    );
+    background-color: ${colorSchemma.colorSecondary};
     .info {
       width: 80%;
       min-height: 250px;

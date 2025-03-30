@@ -11,6 +11,10 @@ function PageEvent(props) {
 
   const [currentEp, setCurrentEp] = useState(0);
 
+  var complementa = null
+
+  
+
   events.map((item) => {
     let path = window.location.pathname;
     if (path === item.redirectURL) {
@@ -19,11 +23,17 @@ function PageEvent(props) {
     }
   });
 
+  useEffect(() => {
+    console.log("complementa",complementa)
+
+
+  })
+
   return (
     <Delimiters>
       <PageEventArea>
         <div className="path">
-          <Link to="/eventos">Eventos</Link>
+          <Link to="/conteudo-cliente">Conteudo cliente</Link>
 
           <div>
             <svg
@@ -83,48 +93,64 @@ function PageEvent(props) {
                   <small>{eps.length} aulas</small>
                 </div>
 
+
+                
                 <div className="eps">
-                  <Link
-                    to={window.location.pathname + '/material-complementar'}
-                  >
-                    <svg
-                      fill="none"
-                      height="24"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                      <polyline points="7 10 12 15 17 10" />
-                      <line x1="12" x2="12" y1="15" y2="3" />
-                    </svg>
-                    Material Complementar
-                  </Link>
-                  {eps.map((item, index) => {
-                    return (
-                      <a
-                        key={index}
-                        id={index}
-                        onClick={(e) => {
-                          setCurrentEp(e.target.id);
-                        }}
+
+
+
+                  {/* QUANDO ESTIVER COM MUITA PACIENCIA, VALIDAR O BOTÃO MATERIAIS COMPLEMENTARES */}
+                  {/* {complementa == null && (
+                    <h1>OK GOOGLE</h1>
+                )}
+                <div className="materialComplementary">
+                    <Link to={window.location.pathname + '/material-complementar'} id="ok">
+                      <svg
+                        fill="none"
+                        height="24"
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          className="circleTemporal"
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="7 10 12 15 17 10" />
+                        <line x1="12" x2="12" y1="15" y2="3" />
+                      </svg>
+                      Material Complementar
+                    </Link>
+                  </div> */}
+
+
+
+                  
+
+                  <div className="sidebar-itens">
+                    {eps.map((item, index) => {
+                      return (
+                        <a
+                          key={index}
+                          id={index}
+                          onClick={(e) => {
+                            setCurrentEp(e.target.id);
+                          }}
                         >
-                          <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2z"></path>
-                        </svg>
-                        {item.epName == "Aula Bônus" ? item.epName : item.epName.substring(10)}
-                      </a>
-                    );
-                  })}
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            className="circleTemporal"
+                          >
+                            <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2z"></path>
+                          </svg>
+                          {item.epName == "Aula Bônus" ? item.epName : item.epName.substring(10)}
+                        </a>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
             </div>
