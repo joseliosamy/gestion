@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { HomeArea, LoadingScreen } from './styled';
+import { HomeArea, LoadingScreen } from './styled'; // Importação correta
 import bannerMP4 from '../../images/banner.mp4';
 import bannerPNG from '../../images/banner.png';
 
@@ -21,11 +21,6 @@ function Home() {
 
     video.addEventListener('canplay', handleCanPlay);
     video.addEventListener('error', handleError);
-
-    // Verificação inicial caso o vídeo já esteja carregado
-    if (video.readyState > 3) {
-      setIsLoading(false);
-    }
 
     return () => {
       video.removeEventListener('canplay', handleCanPlay);
@@ -54,10 +49,7 @@ function Home() {
           >
             <source src={bannerMP4} type="video/mp4" />
           </video>
-          <img 
-            src={bannerPNG} 
-            alt="banner" 
-          />
+          <img src={bannerPNG} alt="banner" />
         </div>
       </HomeArea>
     </>

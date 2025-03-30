@@ -6,17 +6,14 @@ const spin = keyframes`
   100% { transform: rotate(360deg); }
 `;
 
+// Componente LoadingScreen (já existente)
 export const LoadingScreen = styled.div`
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    180deg, 
-    rgba(0,0,0,0.9) 0%,
-    rgba(10, 107, 146, 0.8) 100%
-  );
+  background: linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(0, 20, 27, 0.8) 100%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,6 +31,7 @@ export const LoadingScreen = styled.div`
   }
 `;
 
+// Componente HomeArea (que estava faltando)
 export const HomeArea = styled.div`
   min-height: calc(100vh - 70px);
   width: 80%;
@@ -58,16 +56,8 @@ export const HomeArea = styled.div`
     color: #fff;
     font-weight: 500;
     border-radius: 20px;
-    background-image: linear-gradient(
-        200deg,
-        #009cda,
-        rgba(142, 97, 255, 0) 34%
-      ),
-      radial-gradient(
-        circle farthest-corner at 0% -100%,
-        rgb(61, 132, 255) 20%,
-        rgba(205, 219, 248, 0) 51%
-      ),
+    background-image: linear-gradient(200deg, #009cda, rgba(142, 97, 255, 0) 34%),
+      radial-gradient(circle farthest-corner at 0% -100%, rgb(61, 132, 255) 20%, rgba(205, 219, 248, 0) 51%),
       linear-gradient(180deg,rgb(25, 146, 194),rgb(10, 107, 146));
     padding: 15px 40px;
     box-shadow: 1px 1px 3px 1px rgb(0 0 0 / 19%),
@@ -121,11 +111,7 @@ export const HomeArea = styled.div`
 
   @media (max-width: 600px) {
     width: 100%;
-    background: linear-gradient(
-      180deg,
-      rgba(93, 23, 234, 0) 39%,
-      rgba(23, 90, 234, 0.25) 100%
-    );
+    background: linear-gradient(180deg, rgba(93, 23, 234, 0) 39%, rgba(23, 90, 234, 0.25) 100%);
 
     > div {
       bottom: 65px;
