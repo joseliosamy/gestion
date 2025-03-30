@@ -49,7 +49,6 @@ export const HomeArea = styled.div`
     text-align: center;
     z-index: 1;
     margin-bottom: 15px;
-    text-shadow: 0 0 10px rgba(0, 156, 218, 0.7);
   }
 
   a {
