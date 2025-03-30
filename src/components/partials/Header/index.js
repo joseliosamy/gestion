@@ -19,24 +19,29 @@ function Header() {
             </Link>
             <ul className={menu}>
               <li>
+                <Link to="/" onClick={disableMenu}>
+                  Início
+                </Link>
+              </li>
+              {/* <li>
                 <Link to="/sobre" onClick={disableMenu}>
                   O que somos?
                 </Link>
-              </li>
+              </li> */}
               <li>
-                <Link to="/eventos" onClick={disableMenu}>
-                  Eventos disponíveis
+                <Link to="/conteudo-cliente" onClick={disableMenu}>
+                  Conteúdo cliente
                 </Link>
               </li>
-              <li>
-                <Link to="/ferramentas" onClick={disableMenu}>
-                  Ferramentas para o uso
+              {/* <li>
+                <Link to="/contato" onClick={disableMenu}>
+                  Contato
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
 
-          <Link to="/eventos">Assistir</Link>
+          <Link to="/conteudo-cliente">Assistir</Link>
 
           <div
             className="menu"

@@ -48,30 +48,25 @@ export const HeaderArea = styled.header`
             font-size: 0.9rem;
             color: ${colorSchemma.colorTerciary};
             font-weight: 600;
-            transition: 180ms;
+            transition: color 180ms ease;
             position: relative;
-            ::after {
+
+            &::after {
               content: '';
-              width: 0;
-              height: 1px;
-              display: flex;
-              justify-content: center;
+              width: 0%;  // Começa invisível (sem largura)
+              height: 2px;
               background-color: ${colorSchemma.colorSecondary};
               position: absolute;
               bottom: 0;
-              transition: 100ms ease-out;
+              left: 50%;  // Posiciona no centro
+              transform: translateX(-50%);  // Ajuste fino de centralização
+              transition: width 200ms ease-out;
             }
-            &:hover {
-              color: #fff;
-              ::after {
-                width: 100%;
-              }
-            }
-            &:focus {
-              color: ${colorSchemma.colorSecondary};
-              ::after {
-                background-color: ${colorSchemma.colorSecondary};
-              }
+
+            &:hover::after {
+              width: 100%;  // Expande para 100% da largura
+              left: 50%;  // Posiciona no centro
+              transform: translateX(-50%);  // Ajuste fino de centralização
             }
           }
         }

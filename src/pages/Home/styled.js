@@ -22,23 +22,24 @@ export const HomeArea = styled.div`
     border-radius: 20px;
     background-image: linear-gradient(
         200deg,
-        #9e61ff,
+#009cda,
         rgba(142, 97, 255, 0) 34%
       ),
       radial-gradient(
         circle farthest-corner at 0% -100%,
-        #619bff 20%,
+rgb(61, 132, 255) 20%,
         rgba(205, 219, 248, 0) 51%
       ),
-      linear-gradient(180deg, #6c52ee, #6c52ee);
+      linear-gradient(180deg,rgb(25, 146, 194),rgb(10, 107, 146));
     padding: 15px 40px;
     box-shadow: 1px 1px 3px 1px rgb(0 0 0 / 19%),
-      0 0 15px 0 rgb(238 1 255 / 57%), 0 5px 53px 0 rgb(0 29 255 / 73%);
+      0 0 15px 0 rgba(0, 183, 255, 0.76), 0 5px 53px 0 rgb(0 29 255 / 73%);
     transition: 180ms;
     z-index: 1;
     &:hover {
-      filter: hue-rotate(83deg);
+      filter: hue-rotate(-20deg);
       box-shadow: none;
+      transform: scale(1.1);
     }
   }
 
@@ -75,7 +76,7 @@ export const HomeArea = styled.div`
     background: linear-gradient(
       180deg,
       rgba(93, 23, 234, 0) 39%,
-      rgba(93, 23, 234, 0.25) 100%
+      rgba(23, 90, 234, 0.25) 100%
     );
     > div {
       bottom: 65px;

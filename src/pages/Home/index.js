@@ -9,8 +9,8 @@ function Home() {
   return (
     <>
       <HomeArea>
-        <h1>To Developer</h1>
-        <Link to="/eventos">Começar</Link>
+        <h1>Traffic gestion</h1>
+        <Link to="/conteudo-cliente">Começar</Link>
         <div>
           <video autoPlay muted playsInline loop>
             <source src={bannerMP4}></source>

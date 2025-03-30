@@ -9,10 +9,9 @@ function Eventos(props) {
     <EventsArea>
       <section className="apresentation">
         <div className="info">
-          <p>Eventos disponíveis 🚀</p>
+          <p>Conteúdo disponível! 🚀</p>
           <p>
-            A melhor seleção de eventos web para developers que querem ir para o
-            próximo nível
+            Acesse os conteúdos necessários agora mesmo!
           </p>
         </div>
       </section>

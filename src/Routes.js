@@ -32,7 +32,7 @@ function Routes() {
       <Route exact path="/sobre">
         <About />
       </Route>
-      <Route exact path="/eventos">
+      <Route exact path="/conteudo-cliente">
         <Events date={date} loading={loading} />
       </Route>
       <Route exact path="/eventos/*/material-complementar">
@@ -41,7 +41,7 @@ function Routes() {
       <Route exact path="/eventos/*">
         <PageEvent date={date} />
       </Route>
-      <Route exact path="/ferramentas">
+      <Route exact path="/contato">
         Em desenvolvimento...
       </Route>
       <Route path="*">Erro 404.</Route>
